@@ -1,115 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>学习前后端上传文件的几种方法</title>
-    <style>
-      /* 链接样式 */
-      a.wave-link {
-        position: relative;
-        text-decoration: none;
-        color: blue;
-      }
 
-      a.wave-link::after {
-        content: "";
-        width: 100%;
-        height: 1px;
-        /* 设置伪元素的高度，这里是下划线的粗细 */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: blue;
-        /* 当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同 */
-        transform: scale(0);
-        transition: all 0.35s;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>学习前后端上传文件的几种方法</title>
+  <style>
+    /* 链接样式 */
+    a.wave-link {
+      position: relative;
+      text-decoration: none;
+      color: blue;
+    }
 
-      a.wave-link:hover::after {
-        transform: scale(1);
-        transform-origin: center;
-      }
+    a.wave-link::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      /* 设置伪元素的高度，这里是下划线的粗细 */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: blue;
+      /* 当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同 */
+      transform: scale(0);
+      transition: all 0.35s;
+    }
 
-      .upload-file-list {
-        position: absolute;
-        left: 25%;
-        top: 10%;
-      }
+    a.wave-link:hover::after {
+      transform: scale(1);
+      transform-origin: center;
+    }
 
-      .upload-file-list li {
-        font-size: 24px;
-        line-height: 50px;
-      }
-    </style>
-  </head>
+    .upload-file-list {
+      position: absolute;
+      left: 25%;
+      top: 10%;
+    }
 
-  <body>
-    <ol class="upload-file-list">
-      <li>
-        <a href="pages/uploadFile/base.html" class="wave-link"
-          >上传文件之 基础方法</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/iframe.html" class="wave-link"
-          >上传文件之 iframe局部刷新</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/judge.html" class="wave-link"
-          >上传文件之 上传文件前的判断</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/multiple.html" class="wave-link"
-          >上传文件之 多文件无刷新上传(XMLHttpRequest)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/fetch.html" class="wave-link"
-          >上传文件之 多文件无刷新上传(fetch)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/progress.html" class="wave-link"
-          >上传文件之 多文件无刷新上传 单进度条(XMLHttpRequest + progress)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/local-preview.html" class="wave-link"
-          >上传文件之 多文件无刷新上传 本地图片预览(XMLHttpRequest +
-          local-preview)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/multiple-progress.html" class="wave-link"
-          >上传文件之 多文件无刷新上传 多进度条(XMLHttpRequest +
-          multiple-progress)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/drag-drop.html" class="wave-link"
-          >上传文件之 多文件无刷新上传 拖拽上传(XMLHttpRequest + drag-drop)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/paste.html" class="wave-link"
-          >上传文件之 多文件无刷新上传 粘贴上传(XMLHttpRequest + paste)</a
-        >
-      </li>
-      <li>
-        <a href="pages/uploadFile/big-file-fragmentation.html" class="wave-link"
-          >大文件分片上传(big-file-fragmentation)</a
-        >
-      </li>
-      <li>
-        <a
-          href="pages/uploadFile/big-file-resume-from-break-point.html"
-          class="wave-link"
-          >大文件分片上传之 断点续传(
-          big-file-fragmentation-resume-from-break-point)</a
-        >
-      </li>
-    </ol>
-  </body>
+    .upload-file-list li {
+      font-size: 24px;
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <ol class="upload-file-list">
+    <li>
+      <a href="pages/uploadFile/base.html" class="wave-link">上传文件之 基础方法</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/iframe.html" class="wave-link">上传文件之 iframe局部刷新</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/judge.html" class="wave-link">上传文件之 上传文件前的判断</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/multiple.html" class="wave-link">上传文件之 多文件无刷新上传(XMLHttpRequest)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/fetch.html" class="wave-link">上传文件之 多文件无刷新上传(fetch)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/progress.html" class="wave-link">上传文件之 多文件无刷新上传 单进度条(XMLHttpRequest + progress)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/local-preview.html" class="wave-link">上传文件之 多文件无刷新上传 本地图片预览(XMLHttpRequest +
+        local-preview)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/multiple-progress.html" class="wave-link">上传文件之 多文件无刷新上传 多进度条(XMLHttpRequest +
+        multiple-progress)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/drag-drop.html" class="wave-link">上传文件之 多文件无刷新上传 拖拽上传(XMLHttpRequest + drag-drop)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/paste.html" class="wave-link">上传文件之 多文件无刷新上传 粘贴上传(XMLHttpRequest + paste)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/big-file-fragmentation.html" class="wave-link">大文件分片上传(big-file-fragmentation)</a>
+    </li>
+    <li>
+      <a href="pages/uploadFile/big-file-resume-from-break-point.html" class="wave-link">大文件分片上传之 断点续传(
+        big-file-fragmentation-resume-from-break-point)</a>
+    </li>
+  </ol>
+</body>
+
 </html>

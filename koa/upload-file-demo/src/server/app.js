@@ -10,7 +10,7 @@ const Koa = require("koa2"),
   bodyparser = require("koa-bodyparser"),
   koaStatic = require("koa-static"),
   koaBody = require("koa-body"),
-  moment = require("moment"),
+  dayjs = require("dayjs"),
   setHeaders = require("./middlewares/setHeaders"),
   config = require("./config.js"),
   path = require("path");
@@ -24,7 +24,7 @@ App
     const start = Date.now();
     await next();
     const ms = Date.now() - start,
-      curDate = moment().format("YYYY-MM-DD HH:mm:ss");
+      curDate = dayjs().format("YYYY-MM-DD HH:mm:ss");
 
     console.log(
       `[${curDate}] ${ctx.method} ${ctx.status} ${ctx.url} - ${ms}ms\n`
@@ -64,7 +64,7 @@ App
 
   .use(setHeaders) // 设置响应头
 
-  .use(route) // koa 使用 koa-router
+  .use(route) // koa 使用 koa2-router
 
   // koa response test ……
   // .use( ctx => {

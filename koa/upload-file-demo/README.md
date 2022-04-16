@@ -1,15 +1,8 @@
-    						文件上传 demo
+# 文件上传 demo
 
-### 准备工作
+### 快速开始
 
-```
-$ npm  install
-```
-
-### 启动服务
-
-如
-
-```
-$ node run start
+```sh
+yarn # 安装依赖
+yarn start # 启动项目
 ```
