@@ -4,11 +4,11 @@
   "description": "this a return json files server",
   "main": "jsonServer.js",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "axios": "^0.21.2",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^0.17.4"
   },
   "scripts": {
